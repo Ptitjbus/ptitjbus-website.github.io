@@ -35,11 +35,17 @@ body{
 }
 
 #escape-game-main-title{
-	text-align: center;
+	
 	color: white;
 	font-family: DejaVuSans-ExtraLight;
 	font-size: 3vw;
-	line-height: 99vh;
+	margin-top: 49vh;
+	margin-bottom: 3vh;
+	
+}
+
+#centre{
+	text-align: center;
 	position: relative;
 }
 
@@ -68,6 +74,7 @@ body{
 	display: inline-block;
 
 	height: 120vh;
+	pointer-events: none;
 	
 }
 
@@ -78,6 +85,7 @@ body{
 	display: inline-block;
 
 	height: 120vh;
+	pointer-events: none;
 }
 
 #requin3{
@@ -87,6 +95,7 @@ body{
 	display: inline-block;
 
 	height: 120vh;
+	pointer-events: none;
 }
 
 @keyframes requin{
@@ -126,4 +135,16 @@ body{
   100%{
   	transform: translate(-10px);
   }
+}
+
+a.jeu{
+	height: 50px;
+	width: 30px;
+	background-color: grey;
+	text-decoration: none;
+	font-family: DejaVuSans;
+	font-size: 30px;
+	color: white;
+	padding: 10px;
+	border-radius: 10px;
 }
