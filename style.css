@@ -1,0 +1,129 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+
+@font-face {
+	font-family: DejaVuSans;
+	src: url("font/DejaVuSans.ttf");
+	font-weight: bold;
+}
+		
+@font-face {
+  	font-family: DejaVuSans-ExtraLight;
+	src: url("font/DejaVuSans-ExtraLight.ttf");
+	font-weight: bold;
+}
+
+
+body{
+	background-color: white;
+}
+
+
+#top-image{
+	background:black url("img/bg-sans-requins.jpg.png")center center no-repeat;
+	background-size: cover;
+	width: 100vw;
+	height: 130vh;
+}
+
+#escape-game-main-title{
+	text-align: center;
+	color: white;
+	font-family: DejaVuSans-ExtraLight;
+	font-size: 3vw;
+	line-height: 99vh;
+	position: relative;
+}
+
+
+.logo-son{
+	height: 50px;
+	width: 50px;
+	opacity: .3;
+	transition: all linear .2s;
+}
+
+.logo-son:hover{
+	opacity: 1;
+	cursor: pointer;
+}
+
+
+
+/*image qui bouge avec animations */
+
+
+#requin1{
+	animation: requin 30s infinite;
+	position: absolute;
+	background-blend-mode: overlay;
+	display: inline-block;
+
+	height: 120vh;
+	
+}
+
+#requin2{
+	animation: requinn 20s infinite;
+	position: absolute;
+	background-blend-mode: overlay;
+	display: inline-block;
+
+	height: 120vh;
+}
+
+#requin3{
+	animation: requinnn 15s infinite;
+	position: absolute;
+	background-blend-mode: overlay;
+	display: inline-block;
+
+	height: 120vh;
+}
+
+@keyframes requin{
+  0%{
+    transform: translate(-25px);
+  }
+
+  50%{
+  	transform: translate(50px);
+  }
+  100%{
+  	transform: translate(-25px);
+  }
+}
+
+@keyframes requinn{
+  0%{
+    transform: translate(25px);
+  }
+
+  50%{
+  	transform: translate(-50px);
+  }
+  100%{
+  	transform: translate(25px);
+  }
+}
+
+@keyframes requinnn{
+  0%{
+    transform: translate(-10px);
+  }
+
+  50%{
+  	transform: translate(20px);
+  }
+  100%{
+  	transform: translate(-10px);
+  }
+}

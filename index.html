@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>escape game</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<nav id="top-image">
+		<!-- boutton son -->
+		<div>
+			<a onClick="togglePlay()">
+				<img class="logo-son" src="img/icone-son.png" >
+			</a>
+
+			<audio id="son-active" src="accueil-music.mp3" autoplay="true" loop="true"></audio>  
+		</div>
+
+		
+
+		<!-- fond avec requins -->
+		
+		<img src="img/requin-3.png" id="requin3">
+		<img src="img/requin-2.png" id="requin2">
+		<img src="img/requin-1.png" id="requin1"> 
+
+
+		<!-- titre -->
+		<h1 id="escape-game-main-title">Hugo le plus bo</h1>
+
+		
+
+
+
+
+
+		<!-- LES SCRIPTS -->
+
+		<script type="text/javascript">
+			
+			var Sample = document.getElementById("son-active");
+
+			function togglePlay() {
+				if (Sample.paused) {					
+					return Sample.play();
+				}else{
+					return Sample.pause();
+				}
+			}
+			// };
+
+			// function fadeAudioOut()
+			// {
+			// 	TweenMax.to(Sample, 2, {volume:0});
+			// 	if (Sample.volume <= 0) {
+			// 		Sample.pause();
+			// 	} 
+			// }
+
+			// function fadeAudioIn()
+			// {
+			// 	Sample.volume = 0;
+			// 	return Sample.play();
+			// 	TweenMax.to(Sample, 2, {volume:100});  
+			// }
+		</script>
+
+	
+
+
+	</nav>
+	
+
+
+</body>
+</html>
