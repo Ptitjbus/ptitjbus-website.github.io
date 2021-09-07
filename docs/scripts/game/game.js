@@ -18,12 +18,7 @@ document.addEventListener("DOMContentLoaded",function(){
 		if(ball.y + 50 > canvas.height){
 			ball.y = canvas.height - 50
 		}
-		document.addEventListener("keybord",(event) =>{
-		if(event.key == 'z'){
-			console.log("hugo le plus bo")
-		}
-	
-		})
+		
 
 	},10)
 
