@@ -21,6 +21,12 @@ document.addEventListener("DOMContentLoaded",function(){
 
 	},10)
 
+	document.addEventListener("keybord",(event) =>{
+		if(event.key == 'z'){
+			console.log("hugo le plus bo")
+		}
+	
+	})
 	
 
 })
