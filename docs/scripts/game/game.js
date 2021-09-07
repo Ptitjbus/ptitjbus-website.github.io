@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded",function(){
 			console.log("hugo le plus bo")
 		}
 	
-	})
+		})
 
 	},10)
 
