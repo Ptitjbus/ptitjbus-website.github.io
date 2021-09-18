@@ -4,28 +4,72 @@
 }
 
 html, body {
-    max-width: 100%;
-    overflow-x: hidden;
+	max-width: 100%;
+	overflow-x: hidden;
 }
 
+
+
+
+@font-face {
+	font-family: DejaVuSans-Bold;
+	src: url("font/DejaVuSans-Bold.ttf");
+	font-weight: bold;
+}
 
 @font-face {
 	font-family: DejaVuSans;
 	src: url("font/DejaVuSans.ttf");
 	font-weight: bold;
 }
-		
+
 @font-face {
-  	font-family: DejaVuSans-ExtraLight;
+	font-family: DejaVuSans-ExtraLight;
 	src: url("font/DejaVuSans-ExtraLight.ttf");
 	font-weight: bold;
 }
+
+
+
+/*----------------------------------------------------------------------------------------google font*/
+
+.material-icons {
+	font-family: 'Material Icons';
+	font-weight: normal;
+	font-style: normal;
+	font-size: 24px;  /* Preferred icon size */
+	display: inline-block;
+	line-height: 1;
+	text-transform: none;
+	letter-spacing: normal;
+	word-wrap: normal;
+	white-space: nowrap;
+	direction: ltr;
+
+	/* Support for all WebKit browsers. */
+	-webkit-font-smoothing: antialiased;
+	/* Support for Safari and Chrome. */
+	text-rendering: optimizeLegibility;
+
+	/* Support for Firefox. */
+	-moz-osx-font-smoothing: grayscale;
+
+	/* Support for IE. */
+	font-feature-settings: 'liga';
+}
+
 
 
 body{
 	background-color: white;
 }
 
+.titre-secondaire{
+	color: white;
+	font-family: DejaVuSans-Bold;
+	font-size: 50px;	
+	margin: 50px 0px 20px 50px;
+}
 
 #top-image{
 	background:black url("img/bg-sans-requins.jpg.png")center center no-repeat;
@@ -39,22 +83,24 @@ body{
 	color: white;
 	font-family: DejaVuSans-ExtraLight;
 	font-size: 3vw;
-	margin-top: 49vh;
-	margin-bottom: 3vh;
+	line-height: 100vh;
 	
 }
 
 #centre{
 	text-align: center;
-	position: relative;
+	
 }
 
 
 .logo-son{
+	position: fixed;
 	height: 50px;
 	width: 50px;
 	opacity: .3;
 	transition: all linear .2s;
+	left: 93vw;
+	top: 90vh;
 }
 
 .logo-son:hover{
@@ -64,7 +110,7 @@ body{
 
 
 
-/*image qui bouge avec animations */
+/*------------------------------------------------------image qui bouge avec animations */
 
 
 #requin1{
@@ -99,65 +145,159 @@ body{
 }
 
 @keyframes requin{
-  0%{
-    transform: translate(-25px);
-  }
+	0%{
+		transform: translate(-25px);
+	}
 
-  50%{
-  	transform: translate(50px);
-  }
-  100%{
-  	transform: translate(-25px);
-  }
+	50%{
+		transform: translate(50px);
+	}
+	100%{
+		transform: translate(-25px);
+	}
 }
 
 @keyframes requinn{
-  0%{
-    transform: translate(25px);
-  }
+	0%{
+		transform: translate(25px);
+	}
 
-  50%{
-  	transform: translate(-50px);
-  }
-  100%{
-  	transform: translate(25px);
-  }
+	50%{
+		transform: translate(-50px);
+	}
+	100%{
+		transform: translate(25px);
+	}
 }
 
 @keyframes requinnn{
-  0%{
-    transform: translate(-10px);
-  }
+	0%{
+		transform: translate(-10px);
+	}
 
-  50%{
-  	transform: translate(20px);
-  }
-  100%{
-  	transform: translate(-10px);
-  }
+	50%{
+		transform: translate(20px);
+	}
+	100%{
+		transform: translate(-10px);
+	}
 }
 
-a.jeu{
-	height: 50px;
-	width: 30px;
-	background-color: #5C848E;
-	text-decoration: none;
-	font-family: DejaVuSans;
-	font-size: 30px;
-	color: white;
-	padding: 10px;
+
+
+/*----------------------------------------------------------------MENU DEROULANT*/
+
+body {
+	background-color: #222;
+}
+.mobile-menu-section {
+	position: absolute;
+	right: 20px;
+	top: 30px;
+}
+.hamburger-container {
+	width: 50px;
+	height: 45px;
+	position: relative;
+	margin-top: -0.8rem;
+	cursor: pointer;
+}
+.hamburger-container span {
+	background: #f2f2f2;
+	display: block;
+	position: absolute;
+	height: 7px;
+	transform: rotate(0deg);
+	transition: all 0.25s cubic-bezier(0.22, 0.61, 0.36, 1);
+	opacity: 1;
+	width: 100%;
+}
+
+span {
 	border-radius: 10px;
-	transition:all 0.5s ease;
+	left: 0;
+}
+.hamburger span:nth-child(1) {
+	top: 0px;
+}
+.hamburger span:nth-child(2),
+.hamburger span:nth-child(3) {
+	top: 18px;
+}
+.hamburger span:nth-child(4) {
+	top: 36px;
+}
+#btnControl {
+	display: none;
+}
+#btnControl:checked + label > div > span:nth-child(1) {
+	top: 18px;
+	width: 0%;
+	left: 50%;
+}
+#btnControl:checked + label > div > span:nth-child(2) {
+	transform: rotate(45deg);
+}
+#btnControl:checked + label > div > span:nth-child(3) {
+	transform: rotate(-45deg);
+}
+#btnControl:checked + label > div > span:nth-child(4) {
+	top: 18px;
+	width: 0%;
+	left: 50%;
+}
+.active {
+	transform: translateX(0) !important;
+}
+#menu {
+	display: block;
+	list-style-type: none;
+	position: fixed;
+	top: 0;
+	transform: translateX(-100%);
+	width: 40%;
+	background:rgba(0, 0, 0, 0.85);
+	color: whitesmoke;
+	padding: 0;
+	margin: 0;
+	transition: transform 450ms cubic-bezier(0.22, 0.61, 0.36, 1);
+	z-index: 10;
+	height: 100%;
+}
+#toggle {
+	z-index: 10;
+	right: 0;
+	opacity: 1;
+	background: transparent;
+	height: 80px;
+	width: 118px;
 }
 
-a.jeu:hover{
-	height: 50px;
-	width: 30px;
-	background-color: #598D9A;
+.items-menu{	
+	margin-left: 100px;
+	transition: all 0.5s ease;
+}
+.items-menu: hover{	
+	margin-left: 120px;
+}
+
+.items-menu-texte{
+
 	text-decoration: none;
-	font-family: DejaVuSans;
+	font-family: DejaVuSans-ExtraLight;
 	font-size: 40px;
 	color: white;
-	padding: 10px;
-	border-radius: 10px;
+	transition: all 0.5s ease;
 }
+
+.items-menu-texte:hover{
+	color: #80B1C8;
+	transform: translate(10px);
+}
+
+li{
+	margin: 30px 0px 0px 0px;
+}
+
+
+

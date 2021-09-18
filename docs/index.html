@@ -4,89 +4,98 @@
 	<title>escape game</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
+	
+	<!-- ------------------------------------------------------------------------------------MENU DEROULANT -->
+
 	<nav id="top-image">
-		<!-- boutton son -->
-		<div>
-			<a onClick="togglePlay()">
-				<img class="logo-son" src="img/icone-son.png" >
-			</a>
-
-			<audio id="son-active" src="accueil-music.mp3" autoplay="true" loop="true"></audio>  
-		</div>
 
 
-		<!-- menu deroulant -->
+				<ul id="menu">
+					<li><h2 class="titre-secondaire">Menu</h2>
+						<ul>
+							<li>
+								<p class="items-menu">
+									<span class="material-icons">gamepad</span>
+									<a href="scripts/game/game.html" class="items-menu-texte">  Jeu</a></p></li>
+							<li>
+								<p class="items-menu">
+									<span class="material-icons">assignment</span>
+									<a href="scripts/formulaire"class="items-menu-texte">  Formulaire</a>
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
 
-		<select name="menu-deroulant">
-			<option><a href="scripts/game/game.html">jeu</a></option>
-			<option><a href="#">formulaire</a></option>
-		</select>
-
-
-		
-
-		<!-- fond avec requins -->
-		
-		<img src="img/requin-3.png" id="requin3">
-		<img src="img/requin-2.png" id="requin2">
-		<img src="img/requin-1.png" id="requin1">
-
-
-		<article id="centre">
-			<!-- titre -->
-			<h1 id="escape-game-main-title">Lorem ipsum</h1>
-			<!-- bouton jeu -->
-			<!-- <a href="scripts/game/game.html" class="jeu">le jeu</a> -->
-		</article>
-
-		
-
-		
-		
+				<div class="mobile-menu-section">
+					<input type="checkbox" id="btnControl" />
+					<label class="btn" for="btnControl" id="toggle">
+						<div class="hamburger hamburger-container">
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+					</label>  
+				</div>
 
 
 
+				<!-- ------------------------------------------------------------------------------------boutton son -->
+
+				<a onClick="togglePlay()">
+					<img class="logo-son" src="img/icone-son.png" ></a><audio id="son-active" src="accueil-music.mp3" autoplay="true" loop="true"></audio>  
 
 
-		<!-- LES SCRIPTS -->
+					<!-- ------------------------------------------------------------------------------------fond avec requins -->
 
-		<script type="text/javascript">
-			
-			var Sample = document.getElementById("son-active");
-
-			function togglePlay() {
-				if (Sample.paused) {					
-					return Sample.play();
-				}else{
-					return Sample.pause();
-				}
-			}
-			// };
-
-			// function fadeAudioOut()
-			// {
-			// 	TweenMax.to(Sample, 2, {volume:0});
-			// 	if (Sample.volume <= 0) {
-			// 		Sample.pause();
-			// 	} 
-			// }
-
-			// function fadeAudioIn()
-			// {
-			// 	Sample.volume = 0;
-			// 	return Sample.play();
-			// 	TweenMax.to(Sample, 2, {volume:100});  
-			// }
-		</script>
-
-	
+					<img src="img/requin-3.png" id="requin3">
+					<img src="img/requin-2.png" id="requin2">
+					<img src="img/requin-1.png" id="requin1">
 
 
-	</nav>
-	
+					<!-- -----------------------------------------------------------------------titre -->
+					<article id="centre">
+						<h1 id="escape-game-main-title">Mathis Viollet</h1>
+					</article>
 
 
-</body>
-</html>
+					<!-- ------------------------------------------------------------------------------------LES SCRIPTS -->
+
+					<script type="text/javascript" src="main.js"></script>
+					<!-- menu deroulant (jquerry)-->
+					<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+					<script>
+
+						$("#toggle").on('click', function() {
+							$('#menu').toggleClass("active");
+						});
+
+					</script>
+
+					<!-- boutton son -->
+					<script type="text/javascript">
+
+						var Sample = document.getElementById("son-active");
+
+						function togglePlay() {
+							if (Sample.paused) {					
+								return Sample.play();
+							}else{
+								return Sample.pause();
+							}
+						}
+					</script>
+
+
+
+
+				</nav>
+
+
+
+			</body>
+			</html>
