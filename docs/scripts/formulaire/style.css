@@ -173,7 +173,7 @@ body {
   box-shadow: 0 0.125em 0.3125em rgba(0, 0, 0, 0.3);
   display: flex;
   justify-content: center;
-  color: red;
+  color: #80B1C8;
 }
 
 .c-form__toggle {
@@ -221,14 +221,15 @@ body {
   color: #5C848E;
 }
 .c-form__input:required:valid + .c-form__buttonLabel {
-  color: #5C848E;
+  color: white;
 }
+
 .c-form__input:required:valid + .c-form__buttonLabel::before {
   pointer-events: initial;
 }
 
 .c-form__buttonLabel {
-  color: white;
+  color: inherit;
   height: 100%;
   width: auto;
 }
